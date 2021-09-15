@@ -85,7 +85,6 @@ class TodoController extends Controller
             ->withInput();
         }
 
-          $todo = Todo::find($todo->id);
           $todo->title = $request->title;
           $todo->description = $request->description;
           $todo->save();
