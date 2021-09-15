@@ -1,11 +1,15 @@
 @if ($todo->completed)
-    <a class="btn btn-success" 
+  
+        <a class="btn btn-success" 
     
-    onclick="event.preventDefault();
-    document.getElementById('form-incomplete-{{$todo->id}}').submit();" 
-    class="btn btn-dark" 
-    href="">
-    <i class="fas fa-check"></i></a>
+            onclick="event.preventDefault();
+            document.getElementById('form-incomplete-{{$todo->id}}').submit();" 
+            class="btn btn-dark" 
+            href="">
+            <i class="fas fa-check"></i>
+        </a>
+       
+   
     
     <form style="display: none;" id="{{'form-incomplete-'.$todo->id}}" method="post" action="{{route('todos.incomplete', $todo-> id)}}">
         @csrf

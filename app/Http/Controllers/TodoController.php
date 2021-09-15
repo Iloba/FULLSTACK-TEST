@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Validator;
 
 class TodoController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function index(){
         
         $todos = auth()->user()->todos()->orderBy('completed')->paginate(5);
@@ -53,8 +58,7 @@ class TodoController extends Controller
         }
 
         $todo =  auth()->user()->todos()->create($request->all());
-
-        return redirect()->route('todos.index')->with('status', 'Todo Created Successfully');
+         return redirect()->route('todos.index')->with('status', 'Todo Created Successfully');
 
     }
 
@@ -84,7 +88,7 @@ class TodoController extends Controller
           $todo->description = $request->description;
           $todo->save();
           return redirect(route('todos.index'))->with('status', 'Todo Update Successful');
-          
+
     }
 
 

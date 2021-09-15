@@ -21,13 +21,13 @@
                                 <li class="px-2 mb-2" style="display: flex; justify-content: space-between;">
                                     @include('todos.completedButton')
                                     @if ($todo->completed)
-                                        <p style="text-decoration: line-through;" class="">{{$todo->title}}</p> 
+                                        <p style="text-decoration: line-through;">{{$todo->title}}</p> 
     
                                     @else
                                         <a href="{{route('todos.show', $todo->id)}}" class="cursor-pointer">{{$todo->title}}</a> 
                                     @endif
                                     <div>
-                                        <a href="{{'/todos/'.$todo->id.'/edit'}}" class=" text-light btn btn-info ml-2">
+                                        <a href="{{route('todos.edit', $todo->id)}}" class=" text-light btn btn-info ml-2">
                                             <i class="fas fa-edit"></i></a>
     
     
@@ -36,14 +36,14 @@
                                                     document.getElementById('form-delete-{{$todo->id}}').submit();
                                                 }";
                                                 
-                                                href="{{'/todos/'.$todo->id.'/delete'}}" class=" text-light btn btn-danger ml-2">
+                                                href="{{route('todos.delete', $todo->id)}}" class=" text-light btn btn-danger ml-2">
                                                 <i class="fas fa-trash"></i>
                                         </a>
     
-                                            <form style="display: none;" id="{{'form-delete-'.$todo->id}}" method="post" action="{{route('todos.delete', $todo-> id)}}">
-                                                @csrf
-                                                @method('delete')
-                                            </form>
+                                        <form style="display: none;" id="{{'form-delete-'.$todo->id}}" method="post" action="{{route('todos.delete', $todo-> id)}}">
+                                            @csrf
+                                            @method('delete')
+                                        </form>
                                         
                                     </div>
                                     
