@@ -10904,3 +10904,9 @@ a.text-dark:focus {
 }
 
 
+/* My Style */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
