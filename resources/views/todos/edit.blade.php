@@ -16,7 +16,7 @@
                                 @method('patch')
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                      <span class="input-group-text"><i class="fas fa-tasks"></i></span>
+                                        <span class="input-group-text bg-info text-light"><i class="fas fa-font"></i></span>
                                     </div>
                                     <input type="text" name="title" class="form-control" placeholder="Todo Title" value="{{$todo->title}}">
                                 </div>
