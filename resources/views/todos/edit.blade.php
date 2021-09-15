@@ -9,17 +9,11 @@
                     </div>
     
                     <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-    
-                
-                        
+                       @include('layouts.messages')        
                         <div class="add-todo-form">
                             <form action="{{route('todos.update', $todo->id)}}" method="POST">
                                 @csrf
+                                @method('patch')
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                       <span class="input-group-text"><i class="fas fa-tasks"></i></span>

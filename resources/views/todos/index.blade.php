@@ -3,20 +3,19 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <h2 class="mb-3">My Todos</h2>
             <div class="card">
+                
                 <div class="card-header">
-                   <h2>My Todos</h2>
-                    
+   
+                   
+                    <a href="{{route('todos.create')}}" class="btn btn-info btn-sm float-right"> <i class="fas fa-plus-square"></i> Add Todo</a>
+                
                 </div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <ul class="" >
+                    @include('layouts.messages')    
+                    <ul>
                         @if (count($todos) > 0)
                                 @foreach ($todos as $todo)
                                 <li class="px-2 mb-2" style="display: flex; justify-content: space-between;">

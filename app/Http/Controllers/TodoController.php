@@ -21,8 +21,8 @@ class TodoController extends Controller
         return view('todos.create');
     }
 
-    public function show(){
-
+    public function show(Todo $todo){
+        return view('todos.show')->with(['todo' => $todo]);
     }
 
     public function edit(Todo $todo){
@@ -30,11 +30,7 @@ class TodoController extends Controller
         return view('todos.edit')->with(['todo'=> $todo]);
     }
 
-
-    public function update(){
-
-    }
-
+    
     public function store(Request $request){
 
         
@@ -57,9 +53,39 @@ class TodoController extends Controller
 
         $todo =  auth()->user()->todos()->create($request->all());
 
-        return back()->with('status', 'Todo Created Successfully');
+        return redirect()->route('todos.index')->with('status', 'Todo Created Successfully');
 
     }
+
+    public function update(Request $request, Todo $todo){
+
+        $rules = [
+            'title' => 'required|max:255',
+            'description' => 'required|max:255'
+        ];
+
+
+        $message = [
+            'title.max' => 'Todo Title Should not be greater than 255 Characters',
+            'title.required' => 'You Must Add a Todo TItle'
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $message);
+
+        if($validator->fails()){
+            return redirect()->back()
+            ->withErrors($validator)
+            ->withInput();
+        }
+
+          $todo = Todo::find($todo->id);
+          $todo->title = $request->title;
+          $todo->description = $request->description;
+          $todo->save();
+
+          return redirect(route('todos.index'))->with('status', 'Todo Update Successful');
+    }
+
 
     public function complete(){
 
@@ -69,7 +95,10 @@ class TodoController extends Controller
 
     }
 
-    public function delete(){
+    public function delete(Todo $todo){
 
+        $todo->delete();
+
+        return redirect(route('todos.index'))->with('status', 'Todo Deleted Successfully');
     }
 }
