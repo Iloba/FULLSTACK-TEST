@@ -12,15 +12,29 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
        
-
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <style>
             body {
                 font-family: 'Poppins', sans-serif;
             }
         </style>
     </head>
-    <body class="antialiased">
-        <h1>Rooah Test</h1>
-        <p>Todo App</p>
+    <body id="home-page">
+        <div class="container" >
+            <div class="row">
+                <div class="col-md-9 mx-auto pt-5 mt-5">
+                   <div class="card p-3 shadow-sm mb-5">
+                    <h1 class="text-center">Rooah Test</h1>
+                    <p class="text-center">Todo App</p>
+                    <div class="d-flex mx-auto m-3">
+                        <a href="{{route('register')}}" class="btn btn-info m-2 text-light">Register</a>
+                        <a href="{{route('login')}}" class="btn btn-info m-2 text-light">Login</a>
+                    </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+       
+       
     </body>
 </html>

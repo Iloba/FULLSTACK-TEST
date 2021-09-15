@@ -5,7 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">
+                    <a href="" class="btn btn-info float-right"> <i class="fas fa-plus-square"></i> Add Todo</a>
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +16,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    list of todos
                 </div>
             </div>
         </div>
