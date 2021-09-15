@@ -26,7 +26,7 @@
                                         <a href="{{route('todos.show', $todo->id)}}" class="cursor-pointer">{{$todo->title}}</a> 
                                        
                                     @endif
-                                    <div>
+                                    <div id="buttons">
                                         <a href="{{route('todos.edit', $todo->id)}}" class=" text-light btn btn-info btn-sm ml-2">
                                             <i class="fas fa-edit"></i></a>
     

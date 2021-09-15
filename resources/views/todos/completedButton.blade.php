@@ -1,6 +1,6 @@
 @if ($todo->completed)
   
-        <a class="btn btn-success" 
+        <a class="btn btn-success" id="checked"
             onclick="event.preventDefault();
             document.getElementById('form-incomplete-{{$todo->id}}').submit();"  
             href="">
@@ -16,7 +16,7 @@
 
     @else
 
-    <a 
+    <a id="checked"
         onclick="event.preventDefault();
         document.getElementById('form-complete-{{$todo->id}}').submit();" 
         class="btn btn-dark btn-sm" 
