@@ -19,7 +19,7 @@
                         @if (count($todos) > 0)
                                 @foreach ($todos as $todo)
                                 <li class="px-2 mb-2" style="display: flex; justify-content: space-between;">
-                                    {{-- @include('todos.completeButton') --}}
+                                    @include('todos.completedButton')
                                     @if ($todo->completed)
                                         <p style="text-decoration: line-through;" class="">{{$todo->title}}</p> 
     

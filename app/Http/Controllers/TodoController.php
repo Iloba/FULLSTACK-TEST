@@ -22,7 +22,7 @@ class TodoController extends Controller
     }
 
     public function show(Todo $todo){
-        
+
         return view('todos.show')->with(['todo' => $todo]);
     }
 
@@ -83,23 +83,29 @@ class TodoController extends Controller
           $todo->title = $request->title;
           $todo->description = $request->description;
           $todo->save();
-
           return redirect(route('todos.index'))->with('status', 'Todo Update Successful');
+          
     }
 
 
-    public function complete(){
+    public function complete(Todo $todo){
 
+        $todo->completed = true;
+        $todo->save();
+        return redirect(route('todos.index'))->with('status', 'Todo Marked as Complete');
     }
 
-    public function incomplete(){
+    public function incomplete(Todo $todo){
+
+        $todo->completed = false;
+        $todo->save();
+        return redirect(route('todos.index'))->with('status', 'Todo Marked as Incomplete');
 
     }
 
     public function delete(Todo $todo){
 
         $todo->delete();
-
         return redirect(route('todos.index'))->with('status', 'Todo Deleted Successfully');
     }
 }
