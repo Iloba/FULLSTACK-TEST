@@ -22,13 +22,12 @@
                                     @include('todos.completedButton')
                                     @if ($todo->completed)
                                         <p style="text-decoration: line-through;">{{$todo->title}}</p> 
-                                        <br>
                                     @else
                                         <a href="{{route('todos.show', $todo->id)}}" class="cursor-pointer">{{$todo->title}}</a> 
                                        
                                     @endif
                                     <div>
-                                        <a href="{{route('todos.edit', $todo->id)}}" class=" text-light btn btn-info ml-2">
+                                        <a href="{{route('todos.edit', $todo->id)}}" class=" text-light btn btn-info btn-sm ml-2">
                                             <i class="fas fa-edit"></i></a>
     
     
@@ -37,7 +36,7 @@
                                                     document.getElementById('form-delete-{{$todo->id}}').submit();
                                                 }";
                                                 
-                                                href="{{route('todos.delete', $todo->id)}}" class=" text-light btn btn-danger ml-2">
+                                                href="{{route('todos.delete', $todo->id)}}" class=" text-light btn btn-danger btn-sm ml-3">
                                                 <i class="fas fa-trash"></i>
                                         </a>
     

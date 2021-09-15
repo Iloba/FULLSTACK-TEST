@@ -1,12 +1,10 @@
 @if ($todo->completed)
   
         <a class="btn btn-success" 
-    
             onclick="event.preventDefault();
-            document.getElementById('form-incomplete-{{$todo->id}}').submit();" 
-            class="btn btn-dark" 
+            document.getElementById('form-incomplete-{{$todo->id}}').submit();"  
             href="">
-            <i class="fas fa-check"></i>
+            <i class="fas fa-check text-small"></i>
         </a>
        
    
@@ -21,7 +19,7 @@
     <a 
         onclick="event.preventDefault();
         document.getElementById('form-complete-{{$todo->id}}').submit();" 
-        class="btn btn-dark" 
+        class="btn btn-dark btn-sm" 
         href="">
         <i class="fas fa-check"></i>
     </a>
