@@ -41,12 +41,14 @@ class TodoController extends Controller
 
         
         $rules = [
-            'title' => 'required|max:255'
+            'title' => 'required|max:255',
+            'description' => 'required|max:255',
         ];
 
         $messages = [
             'title.max' => 'Todo Title Should not be greater than 255 Characters',
-            'title.required' => 'You Must Add a Todo TItle'
+            'title.required' => 'You Must Add a Todo TItle',
+            'description.required' => 'You Must Add a Todo Description',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
