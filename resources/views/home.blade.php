@@ -6,7 +6,8 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <a href="" class="btn btn-info float-right"> <i class="fas fa-plus-square"></i> Add Todo</a>
+                    
+                    <h3>Welcome, {{auth()->user()->name}}</h3>
                 </div>
 
                 <div class="card-body">
@@ -16,7 +17,9 @@
                         </div>
                     @endif
 
-                    list of todos
+                    <a href="{{route('todos.create')}}" class="btn btn-info float-right"> <i class="fas fa-plus-square"></i> Add Todo</a>
+                    <a href="{{route('todos.index')}}" class="btn btn-success float-left"> <i class="fas fa-th-list"></i> My  Todos</a>
+                   
                 </div>
             </div>
         </div>

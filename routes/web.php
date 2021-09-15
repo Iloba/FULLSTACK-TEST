@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TodoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/todos', [TodoController::class, 'index'] )->name('todos.index');
+Route::get('/create', [TodoController::class, 'create'])->name('todos.create');
+Route::post('/todos', [TodoController::class, 'store'])->name('todos.store');
+Route::get('/todos/{todo}/edit', [TodoController::class, 'edit'] )->name('todos.edit');
+Route::patch('/todos/{todo}/update', [TodoController::class, 'update'])->name('todos.update');
+Route::get('/todos/{todo}', [TodoController::class, 'show'])->name('todos.show');
+Route::delete('/todos/{todo}/delete', [TodoController::class, 'delete'])->name('todos.delete');

@@ -48,7 +48,7 @@
                     <span>Dashboard</span></a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{route('todos.index')}}">
                     <i class="far fa-list-alt"></i>
                     <span>My Todo List</span></a>
             </li>
