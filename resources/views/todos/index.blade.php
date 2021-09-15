@@ -18,15 +18,14 @@
                     <ul>
                         @if (count($todos) > 0)
                                 @foreach ($todos as $todo)
-                                <li class="px-2 mb-2" style="display: flex; justify-content: space-between;">
+                                <li class="px-2 mb-2" style="display: flex; justify-content: space-between;" id="mobile-list">
                                     @include('todos.completedButton')
                                     @if ($todo->completed)
                                         <p style="text-decoration: line-through;">{{$todo->title}}</p> 
                                         <br>
-                                        <small class="text-center text-success">Todo Completed</small>
                                     @else
                                         <a href="{{route('todos.show', $todo->id)}}" class="cursor-pointer">{{$todo->title}}</a> 
-                                        <small class="text-center text-danger">Todo Incomplete</small>
+                                       
                                     @endif
                                     <div>
                                         <a href="{{route('todos.edit', $todo->id)}}" class=" text-light btn btn-info ml-2">

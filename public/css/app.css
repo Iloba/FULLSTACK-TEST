@@ -2153,7 +2153,7 @@ pre code {
   background-color: #fff;
   border-color: #a1cbef;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  /* box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25); */
 }
 
 .form-control::-moz-placeholder {
@@ -10922,3 +10922,4 @@ a.text-dark:focus {
 ul{
   list-style-type: none;
 }
+

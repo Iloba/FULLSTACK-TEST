@@ -1,0 +1,12 @@
+@media screen and (max-width: 500px){
+    #mobile-list{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+    }
+}
+
+a:hover{
+    text-decoration: none;
+}
