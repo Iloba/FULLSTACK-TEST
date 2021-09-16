@@ -17,8 +17,17 @@
                         </div>
                     @endif
 
-                    <a href="{{route('todos.create')}}" class="btn btn-info float-right"> <i class="fas fa-plus-square"></i> Add Todo</a>
-                    <a href="{{route('todos.index')}}" class="btn btn-success float-left"> <i class="fas fa-th-list"></i> My  Todos</a>
+                    <div class="row mx-auto">   
+                        <div class="col-md-6 mb-3">
+                            <a href="{{route('todos.create')}}" class="btn btn-info float-right"> <i class="fas fa-plus-square"></i> Add Todo</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="{{route('todos.index')}}" class="btn btn-success float-left"> <i class="fas fa-th-list"></i> My  Todos</a>
+                        </div>
+
+                    </div>
+                   
+                 
                    
                 </div>
             </div>

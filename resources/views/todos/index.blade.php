@@ -46,9 +46,10 @@
                                         </form>
                                         
                                     </div>
-                                    <hr>
+                                    
                                 </li>
                                 <br>
+                                <hr>
                             @endforeach
                             
                             @else
