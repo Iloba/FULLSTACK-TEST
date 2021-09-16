@@ -18,7 +18,7 @@
                     <ul>
                         @if (count($todos) > 0)
                                 @foreach ($todos as $todo)
-                                <li class="px-2 mb-2" style="display: flex; justify-content: space-between;" id="mobile-list">
+                                <li class="px-2 mb-3" style="display: flex; justify-content: space-between;" id="mobile-list">
                                     @include('todos.completedButton')
                                     @if ($todo->completed)
                                         <p style="text-decoration: line-through;">{{$todo->title}}</p> 
@@ -48,8 +48,8 @@
                                     </div>
                                     
                                 </li>
-                                <br>
                                 <hr>
+                                <br>
                             @endforeach
                             
                             @else
